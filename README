@@ -1,0 +1,28 @@
+ruby_koans  笔记 
+
+test_nil_has_a_few_methods_defined_on_it
+obj.nil? 和 obj == nil 是等价的，前者性能略优
+
+test_slicing_arrays
+[1,2,3][3,0] == []
+[1,2,3][4,0] == nil
+
+test_the_shovel_operator_modifies_the_original_string
+<< 操作符会修改原来的字符
+original_string = "Hello, "
+hi = original_string 
+there = "World"
+hi << there
+此时 original_string 也会改变
+
+test_single_quoted_string_do_not_interpret_escape_characters
+Ruby 中单引号包含的字符串和双引号包含的字符串不一样。前者是最简单的字符串，除了后跟 \ 和 ' 的情况，\ 在大多数情况下都不会转义。
+
+test_symbols_can_be_dynamically_created 
+避免动态创建过多的 Symbol，因为它们会一直保存在内存里，直到程序退出。
+
+test_symbols_are_not_strings
+Symbol 和 String 比较，总之不想等。( :abc != "abc" )
+
+test_variables_can_also_be_used_to_access_captures 
+通过 $1, $2, ... 可以快速访问 Regexp.last_match[1], Regexp.last_match[2], ...
